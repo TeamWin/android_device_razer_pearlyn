@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2009, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds.  Do not translate. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- Set UI into TV Mode -->
+    <integer name="config_defaultUiModeType">4</integer>
+     <!-- Apps that are authorized to access shared accounts -->
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.tv.settings;</string>
+    <!-- Override configuration check for dpad so that we always appear to have one -->
+    <bool name="config_hasPermanentDpad">true</bool>
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+    <!-- Flag indicating that the media framework should support playing of sounds on volume
+         key usage.  This adds noticeable additional overhead to volume key processing, so
+         is disableable for products for which it is irrelevant. -->
+    <bool name="config_useVolumeKeySounds">false</bool>
+    <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
+    <bool name="config_sendAudioBecomingNoisy">false</bool>
+    <!-- Override long press on home: launch assist intent. -->
+    <integer name="config_longPressOnHomeBehavior">2</integer>
+    <bool name="config_defaultInTouchMode">false</bool>
+</resources>

@@ -1,0 +1,23 @@
+#!/system/bin/sh
+## Post boot commands by gabrielgagz ##
+
+# Setting permissions
+chmod 644 /sys/block/mmcblk0/queue/scheduler
+#chmod 644 /sys/devices/fdb00000.qcom,kgsl-3d0/devfreq/fdb00000.qcom,kgsl-3d0/governor
+chmod 644 /sys/block/mmcblk0/queue/read_ahead_kb
+chmod 644 /sys/module/lowmemorykiller/parameters/minfree
+
+# Changing IO Scheduler
+echo fiops > /sys/block/mmcblk0/queue/scheduler
+
+# Changing GPU governor
+#echo performance > /sys/devices/fdb00000.qcom,kgsl-3d0/devfreq/fdb00000.qcom,kgsl-3d0/governor
+
+# Start ADB ovr tcp
+setprop service.adb.tcp.port 5555
+stop adbd
+start adbd
+
+# Tweaks
+write 1024 > /sys/block/mmcblk0/queue/read_ahead_kb
+echo "9706,14559,29118,48530,67942,72795" > /sys/module/lowmemorykiller/parameters/minfreeTION
