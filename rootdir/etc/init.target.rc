@@ -101,8 +101,8 @@ on boot
     # Enable writing to brightness node under torch-light from userspace
     chown system system /sys/class/leds/torch-light/brightness
 
-on property:dev.bootcomplete=1
-    start mpdecision
+#on property:dev.bootcomplete=1
+#    start mpdecision
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
@@ -127,10 +127,10 @@ service qseecomd /system/bin/qseecomd
    user root
    group root
 
-service mpdecision /system/bin/mpdecision --avg_comp
-   class main
-   user root
-   disabled
+#service mpdecision /system/bin/mpdecision --avg_comp
+#   class main
+#   user root
+#   disabled
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main

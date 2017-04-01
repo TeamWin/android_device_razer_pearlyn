@@ -11,8 +11,8 @@
 
     <!-- DO NOT TRANSLATE -->
     <string-array name="home_screen_row_ordering" translatable="false">
-        <item>apps_row</item>
-        <item>partner_row</item>
+		<item>partner_row</item>
+        <item>apps_row</item>    
         <item>games_row</item>
         <item>inputs_row</item>
         <item>settings_row</item>

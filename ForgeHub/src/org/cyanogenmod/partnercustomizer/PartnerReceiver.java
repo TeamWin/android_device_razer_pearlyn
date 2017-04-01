@@ -48,7 +48,7 @@ public class PartnerReceiver extends BroadcastReceiver {
 
     //private static final String BROWSER_PKG_NAME = "com.android.browser";
     private static final String KODI_PKG_NAME = "org.xbmc.kodi";
-    private static final String FILEMANAGER_PKG_NAME = "com.amaze.filemanager";
+    private static final String FILEMANAGER_PKG_NAME = "dev.dworks.apps.anexplorer";
 
     private Context mContext;
     private NotificationManager mNotifMan;
@@ -75,7 +75,7 @@ public class PartnerReceiver extends BroadcastReceiver {
         } else if (ACTION_PARTNER_CUSTOMIZATION.equals(action)) {
             mRowCutoff = intent.getIntExtra(EXTRA_ROW_WRAPPING_CUTOFF, 0);
            // postNotification(BROWSER_PKG_NAME);
-           postNotification(KODI_PKG_NAME);
+            postNotification(KODI_PKG_NAME);
             postNotification(FILEMANAGER_PKG_NAME);
         }
     }
@@ -125,7 +125,7 @@ public class PartnerReceiver extends BroadcastReceiver {
         extras.putString(BLACKLIST_PACKAGE, pkgName);
 
         bob.setContentTitle(mContext.getString(titleId))
-                .setSmallIcon(R.drawable.ic_launcher)
+              //  .setSmallIcon(R.drawable.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), resId))
                 .setContentIntent(PendingIntent.getActivity(mContext, 0, intent, 0))
                 .setCategory(Notification.CATEGORY_RECOMMENDATION)
