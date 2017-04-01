@@ -13,11 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Need AppWidget permission to prevent from Launcher's crash.
-# TODO(pattjin): Remove this when the TV Launcher is used, which does not support AppWidget.
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Include atv base
@@ -27,7 +22,7 @@ $(call inherit-product, device/razer/pearlyn/atv_base.mk)
 $(call inherit-product-if-exists, vendor/razer/pearlyn/pearlyn-vendor.mk)
 
 # Get Android TV vendor apps
-$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
+#$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay
@@ -135,6 +130,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	busybox \
 	ntfs-3g
+	
+# Launcher Mod Apps (thanks to CM13 for fugu)
+PRODUCT_PACKAGES += \
+	ForgeHub \
+	AppDrawer	
 
 # Permissions
 PRODUCT_COPY_FILES += \

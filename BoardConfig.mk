@@ -74,7 +74,7 @@ BOARD_VOLD_MAX_PARTITIONS := 40
 -include vendor/razer/pearlyn/BoardConfigVendor.mk
 
 # inherit from the proprietary version
--include vendor/google/atv/BoardConfigVendor.mk
+#-include vendor/google/atv/BoardConfigVendor.mk
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
