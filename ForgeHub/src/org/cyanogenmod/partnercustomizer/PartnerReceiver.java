@@ -48,7 +48,7 @@ public class PartnerReceiver extends BroadcastReceiver {
 
     //private static final String BROWSER_PKG_NAME = "com.android.browser";
     private static final String KODI_PKG_NAME = "org.xbmc.kodi";
-    private static final String FILEMANAGER_PKG_NAME = "com.cyanogenmod.filemanager";
+    private static final String FILEMANAGER_PKG_NAME = "com.amaze.filemanager";
 
     private Context mContext;
     private NotificationManager mNotifMan;
