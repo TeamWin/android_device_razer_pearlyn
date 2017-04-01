@@ -12,5 +12,6 @@
     <string name="browser">Browser</string>
     <string name="kodi">Kodi</string>
     <string name="filemanager">File Manager</string>
+    <string name="cortex">Razer Cortex</string>
 
 </resources>

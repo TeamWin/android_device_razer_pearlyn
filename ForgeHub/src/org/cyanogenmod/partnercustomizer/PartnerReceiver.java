@@ -49,6 +49,7 @@ public class PartnerReceiver extends BroadcastReceiver {
     //private static final String BROWSER_PKG_NAME = "com.android.browser";
     private static final String KODI_PKG_NAME = "org.xbmc.kodi";
     private static final String FILEMANAGER_PKG_NAME = "dev.dworks.apps.anexplorer";
+    private static final String CORTEX_PKG_NAME = "tv.ouya.oe.installer";
 
     private Context mContext;
     private NotificationManager mNotifMan;
@@ -77,6 +78,7 @@ public class PartnerReceiver extends BroadcastReceiver {
            // postNotification(BROWSER_PKG_NAME);
             postNotification(KODI_PKG_NAME);
             postNotification(FILEMANAGER_PKG_NAME);
+            postNotification(CORTEX_PKG_NAME);
         }
     }
 
@@ -88,15 +90,22 @@ public class PartnerReceiver extends BroadcastReceiver {
         int backupTitleId;
 
         switch (pkgName) {
-           case KODI_PKG_NAME:
+			case CORTEX_PKG_NAME:
                 sort = 1;
+                resId = R.drawable.ic_cortex_banner;
+                backupResId = R.drawable.ic_cortex_banner;
+                titleId = R.string.cortex;
+                backupTitleId = R.string.cortex;
+                break;
+           case KODI_PKG_NAME:
+                sort = 2;
                 resId = R.drawable.ic_kodi_banner;
                 backupResId = R.drawable.ic_kodi_banner;
                 titleId = R.string.kodi;
                 backupTitleId = R.string.kodi;
                 break;
             case FILEMANAGER_PKG_NAME:
-                sort = 2;
+                sort = 3;
                 resId = R.drawable.ic_filemanager_banner;
                 backupResId = R.drawable.ic_filemanager_banner;
                 titleId = R.string.filemanager;
@@ -125,7 +134,7 @@ public class PartnerReceiver extends BroadcastReceiver {
         extras.putString(BLACKLIST_PACKAGE, pkgName);
 
         bob.setContentTitle(mContext.getString(titleId))
-              //  .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), resId))
                 .setContentIntent(PendingIntent.getActivity(mContext, 0, intent, 0))
                 .setCategory(Notification.CATEGORY_RECOMMENDATION)
