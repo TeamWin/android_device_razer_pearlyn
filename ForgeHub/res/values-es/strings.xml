@@ -1,12 +1,11 @@
 <resources>
 
-    <string name="app_label">Forge Hub</string>
+    <string name="app_label">ForgeHUB</string>
 
-    <string name="partner_row_title">Apps del Hub</string>
-    <string name="apps_row_title">Mis Apps</string>
-    <string name="games_row_title">Mis Juegos</string>
-    <string name="inputs_row_title">Mis Inputs</string>
-    <string name="settings_row_title">Mi Configuración</string>
+    <string name="apps_row_title">Aplicaciones</string>
+    <string name="games_row_title">Juegos</string>
+    <string name="inputs_row_title">Entradas</string>
+    <string name="settings_row_title">Configuración</string>
 
     <!-- Content description for Apps -->
     <string name="browser">Navegador Web</string>
