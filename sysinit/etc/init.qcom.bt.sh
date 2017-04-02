@@ -53,7 +53,7 @@ failed ()
 
 program_bdaddr ()
 {
-  /system/bin/btnvtool_razer -O
+  /system/bin/btnvtool -O
   logi "Bluetooth Address programmed successfully"
 }
 
