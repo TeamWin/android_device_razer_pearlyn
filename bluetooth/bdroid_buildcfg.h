@@ -22,16 +22,16 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME   "Razer Forge Tv"
-// Disables read remote device feature
-#define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
-#define MAX_ACL_CONNECTIONS    16
-#define MAX_L2CAP_CHANNELS    16
+
+#include <cutils/properties.h>
+#include <string.h>
+
+#define BTM_DEF_LOCAL_NAME "Forge TV"
+#define BLUETOOTH_QTI_SW                TRUE
 // skips conn update at conn completion
 #define BTA_BLE_SKIP_CONN_UPD  TRUE
+// Enables interleaved scan
+#define BTA_HOST_INTERLEAVE_SEARCH TRUE
 
-#define BLE_VND_INCLUDED   FALSE
-#define BLE_PRIVACY_SPT    FALSE
-#define BT_CLEAN_TURN_ON_DISABLED 1
 #endif
 

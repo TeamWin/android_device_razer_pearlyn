@@ -38,6 +38,9 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 # /etc files
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/etc,system/etc) 
 
+# Keylayout files
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout,system/usr/keylayout) 
+
 # Let's put adb insecure on boot, for debug purposes	
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \

@@ -77,11 +77,9 @@ BOARD_VOLD_MAX_PARTITIONS := 40
 #-include vendor/google/atv/BoardConfigVendor.mk
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PEARLYN_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_HAS_QCA_BT_ROME := true
-BOARD_BLUEDROID_VENDOR_CONF := $(PEARLYN_PATH)/bluetooth/libbt_vndcfg.txt
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
