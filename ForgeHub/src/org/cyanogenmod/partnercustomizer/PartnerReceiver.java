@@ -46,11 +46,9 @@ public class PartnerReceiver extends BroadcastReceiver {
     private static final String PARTNER_GROUP = "partner_row_entry";
     private static final String BLACKLIST_PACKAGE = "com.google.android.leanbacklauncher.replacespackage";
 
-    //private static final String BROWSER_PKG_NAME = "com.android.browser";
     private static final String KODI_PKG_NAME = "org.xbmc.kodi";
     private static final String FILEMANAGER_PKG_NAME = "dev.dworks.apps.anexplorer";
     private static final String CORTEX_PKG_NAME = "tv.ouya.oe.installer";
-    private static final String ADAWAY_PKG_NAME = "org.adaway";
 
     private Context mContext;
     private NotificationManager mNotifMan;
@@ -76,11 +74,9 @@ public class PartnerReceiver extends BroadcastReceiver {
             postNotification(getPackageName(intent));
         } else if (ACTION_PARTNER_CUSTOMIZATION.equals(action)) {
             mRowCutoff = intent.getIntExtra(EXTRA_ROW_WRAPPING_CUTOFF, 0);
-           // postNotification(BROWSER_PKG_NAME);
             postNotification(KODI_PKG_NAME);
             postNotification(FILEMANAGER_PKG_NAME);
             postNotification(CORTEX_PKG_NAME);
-            postNotification(ADAWAY_PKG_NAME);
         }
     }
 
