@@ -155,5 +155,8 @@ PRODUCT_COPY_FILES += \
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.board=APQ8084 \
-	net.bt.name=Forge \
 	ro.com.google.clientidbase=android-pearlyn
+
+# Power
+PRODUCT_PACKAGES += \
+    power.qcom

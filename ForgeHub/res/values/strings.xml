@@ -13,5 +13,10 @@
     <string name="kodi">Kodi</string>
     <string name="filemanager">File Manager</string>
     <string name="cortex">Razer Cortex</string>
-
+    <string name="netflix">Netflix</string>
+	<string name="hulu">Hulu</string>
+	<string name="vudu">Vudu</string>
+	<string name="crunchy">Crunchyroll</string>
+	<string name="sling">Sling</string>
+	<string name="crackle">Crackle</string>
 </resources>

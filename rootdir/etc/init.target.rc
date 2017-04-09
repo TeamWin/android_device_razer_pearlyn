@@ -102,6 +102,9 @@ on boot
     chown system system /sys/class/leds/torch-light/brightness
 
 on property:dev.bootcomplete=1
+	#Fix permission issues with Gapps
+	pm grant com.google.android.gms android.permission.ACCESS_FINE_LOCATION
+	pm grant com.google.android.gms android.permission.ACCESS_COARSE_LOCATION
     start mpdecision
 
 # Allow usb charging to be disabled peristently
