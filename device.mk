@@ -22,7 +22,7 @@ $(call inherit-product, device/razer/pearlyn/atv_base.mk)
 $(call inherit-product-if-exists, vendor/razer/pearlyn/pearlyn-vendor.mk)
 
 # Get Android TV vendor apps
-#$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
+$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay
@@ -155,8 +155,15 @@ PRODUCT_COPY_FILES += \
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.board=APQ8084 \
+	net.bt.name=Forge \
 	ro.com.google.clientidbase=android-pearlyn
-
-# Power
+	
+# Power HAL
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.apq8084
+
+# tcmiface for tcm support
+PRODUCT_PACKAGES += tcmiface
+
+PRODUCT_BOOT_JARS += \
+    tcmiface

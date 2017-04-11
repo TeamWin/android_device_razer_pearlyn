@@ -26,7 +26,7 @@
 #include <cutils/properties.h>
 #include <string.h>
 
-#define BTM_DEF_LOCAL_NAME "Forge TV"
+#define BTM_DEF_LOCAL_NAME "Forge"
 #define BLUETOOTH_QTI_SW                TRUE
 // skips conn update at conn completion
 #define BTA_BLE_SKIP_CONN_UPD  TRUE

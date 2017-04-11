@@ -42,4 +42,6 @@
     <string name="def_location_providers_allowed" translatable="false">network</string>
     <bool name="def_wifi_on">true</bool>
 
+	<!-- Disable netstats for atv -->
+    <bool name="def_netstats_enabled">false</bool>
 </resources>

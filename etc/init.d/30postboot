@@ -21,3 +21,11 @@ start adbd
 # Tweaks
 write 1024 > /sys/block/mmcblk0/queue/read_ahead_kb
 echo "9706,14559,29118,48530,67942,72795" > /sys/module/lowmemorykiller/parameters/minfreeTION
+
+# Restart mpdecision
+stop mpdecision
+start mpdecision
+
+#Fix permission issues with Gapps
+pm grant com.google.android.gms android.permission.ACCESS_FINE_LOCATION
+pm grant com.google.android.gms android.permission.ACCESS_COARSE_LOCATION

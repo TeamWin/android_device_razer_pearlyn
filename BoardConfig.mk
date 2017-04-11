@@ -74,7 +74,7 @@ BOARD_VOLD_MAX_PARTITIONS := 40
 -include vendor/razer/pearlyn/BoardConfigVendor.mk
 
 # inherit from the proprietary version
-#-include vendor/google/atv/BoardConfigVendor.mk
+-include vendor/google/atv/BoardConfigVendor.mk
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PEARLYN_PATH)/bluetooth
