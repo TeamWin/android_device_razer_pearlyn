@@ -126,3 +126,10 @@ WITH_DEXPREOPT=false
 
 # Ensure f2fstools are built
 TARGET_USERIMAGES_USE_F2FS := true
+
+# DRM Protected Video
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
+
+# System's VSYNC phase offsets in nanoseconds
+VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
