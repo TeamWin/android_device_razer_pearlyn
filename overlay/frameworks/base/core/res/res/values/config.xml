@@ -34,4 +34,7 @@
     <bool name="config_useVolumeKeySounds">false</bool>
     <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
     <bool name="config_sendAudioBecomingNoisy">false</bool>
+    <!-- Use android tv account activity -->
+   <string name="config_chooseAccountActivity">com.google.android.gms/.common.account.NoTouchAccountPickerActivity</string>
+   <string name="config_chooseTypeAndAccountActivity">com.google.android.gms/.common.account.NoTouchAccountPickerActivity</string>
 </resources>
