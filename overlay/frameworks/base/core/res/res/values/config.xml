@@ -34,7 +34,4 @@
     <bool name="config_useVolumeKeySounds">false</bool>
     <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
     <bool name="config_sendAudioBecomingNoisy">false</bool>
-    <!-- Override long press on home: launch assist intent. -->
-    <integer name="config_longPressOnHomeBehavior">2</integer>
-    <bool name="config_defaultInTouchMode">false</bool>
 </resources>

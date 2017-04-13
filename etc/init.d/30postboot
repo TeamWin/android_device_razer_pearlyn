@@ -15,11 +15,11 @@ stop adbd
 start adbd
 
 # Tweaks
-write 1024 > /sys/block/mmcblk0/queue/read_ahead_kb
-echo "9706,14559,29118,48530,67942,72795" > /sys/module/lowmemorykiller/parameters/minfreeTION
+echo "1024" > /sys/block/mmcblk0/queue/read_ahead_kb
+echo "9706,14559,29118,48530,67942,72795" > /sys/module/lowmemorykiller/parameters/minfree
 
 # Enable faux123 intelliplug in performance mode
 echo "1" > /sys/module/intelli_plug/parameters/intelli_plug_active
 echo "1" > /sys/module/intelli_plug/parameters/nr_run_profile_sel
-echo "800" > /sys/module/intelli_plug/parameters/cpu_nr_run_threshold
+echo "4" > /sys/kernel/intelli_plug/parameters/nr_run_hysteresis
 
