@@ -22,7 +22,7 @@ $(call inherit-product, device/razer/pearlyn/atv_base.mk)
 $(call inherit-product-if-exists, vendor/razer/pearlyn/pearlyn-vendor.mk)
 
 # Get Android TV vendor apps
-$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
+#$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay

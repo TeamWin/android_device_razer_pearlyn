@@ -1,0 +1,7 @@
+allow zygote node:tcp_socket node_bind;
+allow zygote proc:file write;
+allow zygote self:tcp_socket { getattr setopt bind create accept listen };
+allow zygote servicemanager:binder call;
+allow zygote shell_exec:file { read execute open execute_no_trans };
+allow zygote system_server:binder { transfer call };
+allow zygote time_daemon:unix_stream_socket connectto;

@@ -1,0 +1,4 @@
+allow untrusted_app device:dir { read open };
+allow untrusted_app self:udp_socket ioctl;
+allow untrusted_app zygote:dir search;
+allow untrusted_app zygote:file { read open };
