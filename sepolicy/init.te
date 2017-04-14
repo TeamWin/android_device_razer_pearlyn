@@ -25,4 +25,3 @@ allow init debugfs:dir mounton;
 allow init node:udp_socket node_bind;
 allow init port:udp_socket name_bind;
 allow init self:udp_socket { read bind setopt };
-allow init system_file:file execute_no_trans;
