@@ -6,4 +6,9 @@ allow qti_init_shell persist_drm_file:file { read getattr open };
 allow qti_init_shell su_exec:file { read getattr open execute execute_no_trans };
 allow qti_init_shell sudaemon:unix_stream_socket connectto;
 allow qti_init_shell superuser_device:sock_file write;
+allow qti_init_shell default_prop:property_service set;
+allow qti_init_shell sysfs_hsic:dir search;
+allow qti_init_shell sysfs_hsic:file { write open };
+
+
 

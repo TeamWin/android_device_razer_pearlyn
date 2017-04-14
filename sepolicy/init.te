@@ -20,3 +20,9 @@ allow init self:socket { read write create ioctl };
 allow init socket_device:sock_file { create setattr };
 
 allow init self:udp_socket read;
+
+allow init debugfs:dir mounton;
+allow init node:udp_socket node_bind;
+allow init port:udp_socket name_bind;
+allow init self:udp_socket { read bind setopt };
+allow init system_file:file execute_no_trans;
