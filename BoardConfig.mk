@@ -120,9 +120,14 @@ BOARD_USES_QC_TIME_SERVICES := true
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
-# Build a deodexed rom
-DISABLE_DEXPREOPT=true
-WITH_DEXPREOPT=false
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 # Ensure f2fstools are built
 TARGET_USERIMAGES_USE_F2FS := true
@@ -131,5 +136,20 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
 
 # System's VSYNC phase offsets in nanoseconds
-VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
-SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
+VSYNC_EVENT_PHASE_OFFSET_NS := 2500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 0000000
+
+
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
+
+# Maximum dimension (width or height) of a virtual display that will be
+# handled by the hardware composer
+MAX_VIRTUAL_DISPLAY_DIMENSION := 2048
