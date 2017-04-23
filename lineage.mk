@@ -20,7 +20,7 @@ $(call inherit-product, device/razer/pearlyn/full_pearlyn.mk)
 $(call inherit-product, vendor/cm/config/common_full_tv.mk)
 
 PRODUCT_DEVICE := pearlyn
-PRODUCT_NAME := cm_pearlyn
+PRODUCT_NAME := lineage_pearlyn
 PRODUCT_RELEASE_NAME := Forge TV
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
