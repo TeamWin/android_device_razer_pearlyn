@@ -18,7 +18,4 @@
     <!-- Default for CMSettings.Secure.STATS_COLLECTION -->
     <!-- Disable stats since cm web page is dead -->
     <bool name="def_stats_collection">false</bool>
-    <!-- Default for CMSettings.System.SYSTEM_PROFILES_ENABLED -->
-    <!-- Disable system services, we dont need this on Android TV -->
-    <bool name="def_profiles_enabled">true</bool>
 </resources>

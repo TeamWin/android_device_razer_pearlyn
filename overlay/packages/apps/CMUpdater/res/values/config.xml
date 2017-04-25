@@ -9,5 +9,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- CMUpdate Config Strings -->
     <string name="conf_update_server_url_def" translatable="false">https://gabrielgagz.000webhostapp.com/api</string>
-    <string name="conf_changelog_url" translatable="false">https://gabrielgagz.000webhostapp.com/api/changelog.xml</string>
 </resources>

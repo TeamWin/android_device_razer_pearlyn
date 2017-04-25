@@ -16,16 +16,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Include atv base
-$(call inherit-product, device/razer/pearlyn/atv_base.mk)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
 
 # Get non-open-source specific aspects for pearlyn
 $(call inherit-product-if-exists, vendor/razer/pearlyn/pearlyn-vendor.mk)
 
-# Get Android TV vendor apps
-#$(call inherit-product-if-exists, vendor/google/atv/atv-vendor.mk)
-
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay
+DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay 
 
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -73,22 +70,24 @@ PRODUCT_PACKAGES += \
 
 # Audio && Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/audio/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/audio/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    #$(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
-    $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
-    $(LOCAL_PATH)/audio/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    $(LOCAL_PATH)/audio/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    $(LOCAL_PATH)/audio/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml\
-    $(LOCAL_PATH)/audio/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    #$(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip \
+    $(LOCAL_PATH)/media/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/media/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    #$(LOCAL_PATH)/media/audio_effects.conf:system/etc/audio_effects.conf \
+    $(LOCAL_PATH)/media/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/media/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
+    $(LOCAL_PATH)/media/listen_platform_info.xml:system/etc/listen_platform_info.xml \
+    $(LOCAL_PATH)/media/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    $(LOCAL_PATH)/media/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    $(LOCAL_PATH)/media/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml\
+    $(LOCAL_PATH)/media/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
+    $(LOCAL_PATH)/media/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/media/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+    
+# Bootanimation    
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip \
     
 # Fonts fix
 PRODUCT_COPY_FILES += \
@@ -124,10 +123,10 @@ PRODUCT_PACKAGES += \
     usf_post_boot.sh  
 
 # Build TvSettings    
-PRODUCT_PACKAGES += \
-	TvSettings \
-	TvProvider \
-	tv_input.default
+#PRODUCT_PACKAGES += \
+#	TvSettings \
+#	TvProvider \
+#	tv_input.default
 	
 # Busybox & ntfs-3g
 PRODUCT_PACKAGES += \
