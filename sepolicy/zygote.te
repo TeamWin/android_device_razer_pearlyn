@@ -5,3 +5,11 @@ allow zygote servicemanager:binder call;
 allow zygote shell_exec:file { read execute open execute_no_trans };
 allow zygote system_server:binder { transfer call };
 allow zygote time_daemon:unix_stream_socket connectto;
+
+allow zygote bluetooth:binder call;
+allow zygote bluetooth:fd use;
+allow zygote bluetooth:unix_stream_socket { read write };
+allow zygote keystore:binder call;
+allow zygote port:tcp_socket name_bind;
+allow zygote untrusted_app:binder { transfer call };
+allow zygote untrusted_app:fd use;
