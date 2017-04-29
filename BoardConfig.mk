@@ -125,6 +125,7 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Ensure f2fstools are built
 TARGET_USERIMAGES_USE_F2FS := true
