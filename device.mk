@@ -159,3 +159,6 @@ PRODUCT_PACKAGES += tcmiface
 
 PRODUCT_BOOT_JARS += \
     tcmiface
+    
+#twrp
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    
