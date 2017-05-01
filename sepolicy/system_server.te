@@ -7,7 +7,6 @@ allow system_server esoc_device:chr_file { open read };
 allow system_server frp_block_device:blk_file { read write ioctl open };
 allow system_server rild:unix_dgram_socket sendto;
 allow system_server zygote:binder { transfer call };
-
 allow servicemanager zygote:dir search;
 allow servicemanager zygote:file { read open };
 allow servicemanager zygote:process getattr;

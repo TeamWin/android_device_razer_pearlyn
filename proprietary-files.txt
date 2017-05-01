@@ -147,7 +147,6 @@ proprietary/priv-app/CortexFramework/CortexFramework.apk
 proprietary/priv-app/LeanbackLauncher/LeanbackLauncher.apk
 proprietary/priv-app/CortexInstaller/CortexInstaller.apk
 proprietary/priv-app/IOSBeamService/IOSBeamService.apk
-proprietary/priv-app/OOBEPairing/OOBEPairing.apk
 proprietary/vendor/bin/sound_trigger_test
 proprietary/vendor/bin/qti
 proprietary/vendor/bin/thermal-engine

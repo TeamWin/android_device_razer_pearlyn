@@ -1,1 +1,3 @@
 allow netd cutback_socket:sock_file write;
+allow netd zygote:fd use;
+allow netd zygote:tcp_socket { read write setopt getopt };

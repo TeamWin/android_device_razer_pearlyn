@@ -119,13 +119,7 @@ PRODUCT_PACKAGES += \
     sec_config \
     valiService.conf\
     vold.fstab \
-    usf_post_boot.sh  
-
-# Build TvSettings    
-#PRODUCT_PACKAGES += \
-#	TvSettings \
-#	TvProvider \
-#	tv_input.default
+    usf_post_boot.sh
 	
 # Busybox & ntfs-3g
 PRODUCT_PACKAGES += \

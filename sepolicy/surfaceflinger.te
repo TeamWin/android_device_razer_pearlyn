@@ -1,0 +1,2 @@
+allow surfaceflinger zygote:binder { transfer call };
+allow surfaceflinger zygote:fd use;
