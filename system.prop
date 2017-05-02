@@ -87,3 +87,9 @@ ro.qualcomm.cabl=0
 
 # Enable single pipe scaling based off libscale
 debug.enable.sglscale=1
+
+# Drm
+drm.service.enabled=true
+
+# Tunning
+debug.performance.tuning=1

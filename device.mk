@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
     init.razer.usb.sh \
     ueventd.qcom.rc
 
-# Audio && Media
+# Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/media/audio_policy.conf:system/etc/audio_policy.conf \
@@ -159,6 +159,12 @@ PRODUCT_PACKAGES += tcmiface
 
 PRODUCT_BOOT_JARS += \
     tcmiface
+    
+# Audio
+PRODUCT_PACKAGES += \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio.a2dp.default    
     
 #twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    
