@@ -40,7 +40,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --tags_offset 0x02000000 --s
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_CONFIG := pearlyn_defconfig
 TARGET_KERNEL_SOURCE := kernel/razer/pearlyn
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
 WLAN_MODULES:
