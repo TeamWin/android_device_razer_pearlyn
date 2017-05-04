@@ -16,4 +16,5 @@
     <string name="netflix">Netflix</string>
 	<string name="store">Google Play</string>
 	<string name="crunchy">Crunchyroll</string>
+	<string name="plex">Plex</string>
 </resources>

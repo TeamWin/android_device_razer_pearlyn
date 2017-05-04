@@ -53,6 +53,7 @@ public class PartnerReceiver extends BroadcastReceiver {
     private static final String STORE_PKG_NAME = "com.android.vending";
     private static final String CRUNCHY_PKG_NAME = "com.crunchyroll.crunchyroid";
     private static final String NETFLIX_PKG_NAME = "com.netflix.ninja";
+    private static final String PLEX_PKG_NAME = "com.plexapp.android";
 
     private Context mContext;
     private NotificationManager mNotifMan;
@@ -85,6 +86,7 @@ public class PartnerReceiver extends BroadcastReceiver {
             postNotification(YOUTUBE_PKG_NAME);
             postNotification(TWITCH_PKG_NAME);
             postNotification(CRUNCHY_PKG_NAME);
+            postNotification(PLEX_PKG_NAME);
         }
     }
 
@@ -131,15 +133,22 @@ public class PartnerReceiver extends BroadcastReceiver {
                 titleId = R.string.youtube;
                 backupTitleId = R.string.youtube;
                 break;
-            case TWITCH_PKG_NAME:
+            case PLEX_PKG_NAME:
                 sort = 6;
+                resId = R.drawable.ic_plex_banner;
+                backupResId = R.drawable.ic_plex_banner;
+                titleId = R.string.plex;
+                backupTitleId = R.string.plex;
+                break;    
+            case TWITCH_PKG_NAME:
+                sort = 7;
                 resId = R.drawable.ic_twitch_banner;
                 backupResId = R.drawable.ic_twitch_banner;
                 titleId = R.string.twitch;
                 backupTitleId = R.string.twitch;
                 break;
              case CRUNCHY_PKG_NAME:
-                sort = 7;
+                sort = 8;
                 resId = R.drawable.ic_crunchy_banner;
                 backupResId = R.drawable.ic_crunchy_banner;
                 titleId = R.string.crunchy;
