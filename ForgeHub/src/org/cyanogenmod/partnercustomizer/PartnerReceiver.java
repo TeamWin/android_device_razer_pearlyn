@@ -48,9 +48,9 @@ public class PartnerReceiver extends BroadcastReceiver {
 
     private static final String KODI_PKG_NAME = "org.xbmc.kodi";
     private static final String CORTEX_PKG_NAME = "tv.ouya.oe.installer";
-    private static final String SLING_PKG_NAME = "com.sling";
-    private static final String CRACKLE_PKG_NAME = "com.crackle.androidtv";
-    private static final String HULU_PKG_NAME = "com.hulu.plus";
+    private static final String YOUTUBE_PKG_NAME = "com.google.android.youtube.tv";
+    private static final String TWITCH_PKG_NAME = "tv.twitch.android.app";
+    private static final String STORE_PKG_NAME = "com.android.vending";
     private static final String CRUNCHY_PKG_NAME = "com.crunchyroll.crunchyroid";
     private static final String NETFLIX_PKG_NAME = "com.netflix.ninja";
 
@@ -81,9 +81,9 @@ public class PartnerReceiver extends BroadcastReceiver {
             postNotification(KODI_PKG_NAME);
             postNotification(NETFLIX_PKG_NAME);
             postNotification(CORTEX_PKG_NAME);
-            postNotification(SLING_PKG_NAME);
-            postNotification(HULU_PKG_NAME);
-            postNotification(CRACKLE_PKG_NAME);
+            postNotification(STORE_PKG_NAME);
+            postNotification(YOUTUBE_PKG_NAME);
+            postNotification(TWITCH_PKG_NAME);
             postNotification(CRUNCHY_PKG_NAME);
         }
     }
@@ -103,48 +103,48 @@ public class PartnerReceiver extends BroadcastReceiver {
                 titleId = R.string.cortex;
                 backupTitleId = R.string.cortex;
                 break;
-           case KODI_PKG_NAME:
+           case STORE_PKG_NAME:
                 sort = 2;
+                resId = R.drawable.ic_store_banner;
+                backupResId = R.drawable.ic_store_banner;
+                titleId = R.string.store;
+                backupTitleId = R.string.store;
+                break;
+           case KODI_PKG_NAME:
+                sort = 3;
                 resId = R.drawable.ic_kodi_banner;
                 backupResId = R.drawable.ic_kodi_banner;
                 titleId = R.string.kodi;
                 backupTitleId = R.string.kodi;
-                break;
+                break;     
             case NETFLIX_PKG_NAME:
-                sort = 3;
+                sort = 4;
                 resId = R.drawable.ic_netflix_banner;
                 backupResId = R.drawable.ic_netflix_banner;
                 titleId = R.string.netflix;
                 backupTitleId = R.string.netflix;
                 break;
-            case HULU_PKG_NAME:
-                sort = 4;
-                resId = R.drawable.ic_hulu_banner;
-                backupResId = R.drawable.ic_hulu_banner;
-                titleId = R.string.hulu;
-                backupTitleId = R.string.hulu;
-                break;
-            case CRACKLE_PKG_NAME:
+            case YOUTUBE_PKG_NAME:
                 sort = 5;
-                resId = R.drawable.ic_crackle_banner;
-                backupResId = R.drawable.ic_crackle_banner;
-                titleId = R.string.crackle;
-                backupTitleId = R.string.crackle;
+                resId = R.drawable.ic_youtube_banner;
+                backupResId = R.drawable.ic_youtube_banner;
+                titleId = R.string.youtube;
+                backupTitleId = R.string.youtube;
+                break;
+            case TWITCH_PKG_NAME:
+                sort = 6;
+                resId = R.drawable.ic_twitch_banner;
+                backupResId = R.drawable.ic_twitch_banner;
+                titleId = R.string.twitch;
+                backupTitleId = R.string.twitch;
                 break;
              case CRUNCHY_PKG_NAME:
-                sort = 6;
+                sort = 7;
                 resId = R.drawable.ic_crunchy_banner;
                 backupResId = R.drawable.ic_crunchy_banner;
                 titleId = R.string.crunchy;
                 backupTitleId = R.string.crunchy;
-                break;   
-             case SLING_PKG_NAME:
-                sort = 7;
-                resId = R.drawable.ic_sling_banner;
-                backupResId = R.drawable.ic_sling_banner;
-                titleId = R.string.sling;
-                backupTitleId = R.string.sling;
-                break;     
+                break;       
             default:
                 return;
         }

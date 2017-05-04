@@ -1,0 +1,6 @@
+allow kernel untrusted_app_tmpfs:file write;
+allow kernel untrusted_app:process setsched;
+allow kernel platform_app:process setsched;
+allow kernel domain:process setsched;
+allow kernel kernel:capability dac_read_search;
+allow kernel kernel:capability dac_override;

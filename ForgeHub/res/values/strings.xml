@@ -9,14 +9,11 @@
     <string name="settings_row_title">Settings</string>
 
     <!-- Content description for Apps -->
-    <string name="browser">Browser</string>
+    <string name="youtube">YouTube</string>
     <string name="kodi">Kodi</string>
-    <string name="filemanager">File Manager</string>
+    <string name="twitch">Twitch</string>
     <string name="cortex">Razer Cortex</string>
     <string name="netflix">Netflix</string>
-	<string name="hulu">Hulu</string>
-	<string name="vudu">Vudu</string>
+	<string name="store">Google Play</string>
 	<string name="crunchy">Crunchyroll</string>
-	<string name="sling">Sling</string>
-	<string name="crackle">Crackle</string>
 </resources>

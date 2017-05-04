@@ -7,8 +7,4 @@
     <string name="inputs_row_title">Entradas</string>
     <string name="settings_row_title">Configuración</string>
 
-    <!-- Content description for Apps -->
-    <string name="browser">Navegador Web</string>
-    <string name="filemanager">Explorador de Archivos</string>
-
 </resources>
