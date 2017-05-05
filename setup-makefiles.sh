@@ -3,7 +3,7 @@
 VENDOR=razer
 DEVICE=pearlyn
 OUTDIR=vendor/$VENDOR/$DEVICE
-MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
+MAKEFILE=../../../$OUTDIR/$DEVICE-vendor.mk
 
 (cat << EOF) > $MAKEFILE
 # Copyright (C) 2016 The Sayanogen Project

@@ -1,1 +1,1 @@
-add_lunch_combo cm_pearlyn-userdebug
+add_lunch_combo lineage_pearlyn-userdebug
