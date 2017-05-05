@@ -1,0 +1,10 @@
+[
+ {
+   "repository": "android_kernel_pearlyn",
+   "target_path": "kernel/razer/pearlyn"
+ },
+ {
+   "repository": "android_vendor_pearlyn",
+   "target_path": "vendor/razer/pearlyn"
+ }
+]
