@@ -168,3 +168,6 @@ PRODUCT_PACKAGES += \
     
 #twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    
+
+# Without this filter, we get very close to the limit.
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space
