@@ -21,4 +21,4 @@ echo "9706,14559,29118,48530,67942,72795" > /sys/module/lowmemorykiller/paramete
 # Enable faux123 intelliplug in performance mode
 echo "1" > /sys/module/intelli_plug/parameters/intelli_plug_active
 echo "1" > /sys/module/intelli_plug/parameters/nr_run_profile_sel
-echo "4" > /sys/kernel/intelli_plug/parameters/nr_run_hysteresis
+echo "4" > /sys/module/intelli_plug/parameters/nr_run_hysteresis

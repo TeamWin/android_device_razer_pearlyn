@@ -3,3 +3,5 @@ allow untrusted_app self:udp_socket ioctl;
 allow untrusted_app zygote:dir search;
 allow untrusted_app zygote:file { read open };
 allow untrusted_app zygote:binder transfer;
+allow untrusted_app recovery_cache_file:dir { read getattr open };
+allow untrusted_app recovery_cache_file:file getattr;
