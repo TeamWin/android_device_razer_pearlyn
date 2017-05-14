@@ -27,12 +27,6 @@
 # Display
 /sys/devices/virtual/graphics/fb0/hbm   u:object_r:livedisplay_sysfs:s0
 
-# NFC
-/dev/bcm2079x-i2c                       u:object_r:nfc_device:s0
-
-# Radio/modem devices
-/dev/subsys_esoc0                       u:object_r:esoc_device:s0
-
 # Sockets
 /data/cam_socket([0-9])*                u:object_r:camera_socket:s0
 /data/power_supply_logger(/.*)?         u:object_r:battery_data_file:s0
@@ -57,3 +51,8 @@
 /system/bin/charge_only_mode            u:object_r:charge_only_mode_exec:s0
 /system/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
+/system/bin/sensorservice     			u:object_r:sensors_exec:s0
+
+
+# Persist widevine
+/persist/drm/widevine(/.*)?    			u:object_r:persist_drm_file:s0

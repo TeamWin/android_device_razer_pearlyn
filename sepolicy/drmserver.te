@@ -1,1 +1,34 @@
 allow drmserver gpu_device:chr_file rw_file_perms;
+
+allow drmserver platform_app:dir search;
+allow drmserver platform_app:file { read getattr open };
+allow drmserver property_socket:sock_file write;
+allow drmserver radio_data_file:file { read getattr open };
+allow drmserver sdcard_internal:file open;
+allow drmserver tmpfs:lnk_file read;
+
+allow drmserver system_app:dir search;
+allow drmserver system_app:file { read open getattr };
+
+allow drmserver mediaserver:dir search;
+allow drmserver mediaserver:file { read open getattr };
+ 
+allow drmserver untrusted_app:dir search;
+allow drmserver untrusted_app:file { read open getattr };
+
+allow drmserver radio_data_file:dir search;
+
+allow drmserver surfaceflinger:fd use;
+
+allow drmserver mediaserver:fifo_file read;
+
+allow drmserver mediaserver:fifo_file write;
+
+allow drmserver persist_data_file:file { read getattr open };
+allow drmserver persist_data_file:dir search;
+
+allow drmserver platform_app_tmpfs:file write;
+
+allow drmserver app_data_file:dir search;
+allow drmserver app_data_file:file open;
+

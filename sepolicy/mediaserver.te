@@ -10,3 +10,4 @@ allow mediaserver audio_cutback_data_file:sock_file write;
 allow mediaserver cutback_socket:sock_file write;
 allow mediaserver drm_data_file:dir rw_dir_perms;
 allow mediaserver drm_data_file:file create_file_perms;
+allow mediaserver self:process execmem;
