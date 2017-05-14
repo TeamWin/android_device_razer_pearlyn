@@ -1,2 +1,2 @@
-allow wcnss_service default_prop:property_service set;s
+allow wcnss_service default_prop:property_service set;
 
