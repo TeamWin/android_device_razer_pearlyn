@@ -164,7 +164,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
-    audio.a2dp.default    
+    audio.a2dp.default  
     
 #twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    

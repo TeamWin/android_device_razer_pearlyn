@@ -26,7 +26,7 @@ service valiService /system/bin/valiService
     user root
     group bluetooth net_bt_admin misc net_bt_stack diag
     disabled
-    oneshot
+    oneshot   
 
 on fs
     # Set a default date

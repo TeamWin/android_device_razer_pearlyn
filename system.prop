@@ -4,7 +4,7 @@ ro.nrdp.modelgroup=XIAOMIM12TRIAL
 ro.lockscreen.disable.default=1
 qcom.bluetooth.soc=rome
 persist.fuse_sdcard=true
-ro.qualcomm.cabl=04
+ro.qualcomm.cabl=0
 persist.demo.hdmirotationlock=false
 ro.hdmi.enable=true
 media.stagefright.less-secure=true 
@@ -93,3 +93,6 @@ drm.service.enabled=true
 
 # Tunning
 debug.performance.tuning=1
+
+# Start in cdma mode
+ro.telephony.default_network=5

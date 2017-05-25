@@ -9,12 +9,10 @@
     <string name="settings_row_title">Settings</string>
 
     <!-- Content description for Apps -->
-    <string name="youtube">YouTube</string>
     <string name="kodi">Kodi</string>
     <string name="twitch">Twitch</string>
     <string name="cortex">Razer Cortex</string>
     <string name="netflix">Netflix</string>
-	<string name="store">Google Play</string>
 	<string name="crunchy">Crunchyroll</string>
 	<string name="plex">Plex</string>
 </resources>
