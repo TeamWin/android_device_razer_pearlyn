@@ -32,3 +32,5 @@ allow zygote self:udp_socket { getopt create ioctl };
 allow zygote system_data_file:dir { write create add_name setattr };
 allow zygote system_app:binder call;
 allow zygote system_data_file:dir remove_name;
+allow zygote device:file open;
+allow zygote init:unix_stream_socket { getattr listen };

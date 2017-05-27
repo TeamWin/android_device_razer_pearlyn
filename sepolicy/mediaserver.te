@@ -11,3 +11,5 @@ allow mediaserver cutback_socket:sock_file write;
 allow mediaserver drm_data_file:dir rw_dir_perms;
 allow mediaserver drm_data_file:file create_file_perms;
 allow mediaserver self:process execmem;
+allow mediaserver graphics_device:dir search;
+allow mediaserver remote_control_service:service_manager find;

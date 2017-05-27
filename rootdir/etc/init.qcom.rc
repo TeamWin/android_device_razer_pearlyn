@@ -44,6 +44,8 @@ on init
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
+    
+    export LD_SHIM_LIBS /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so:/system/vendor/lib/egl/libEGL_adreno.so|libboringssl-compat.so:/system/vendor/lib/egl/libGLESv2_adreno.so|libboringssl-compat.so
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -72,6 +74,12 @@ on boot
     chmod 0660 /dev/ttyHS0
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
+
+# update foreground cpuset now that processors are up
+     write /dev/cpuset/foreground/cpus 0-3
+     write /dev/cpuset/foreground/boost/cpus 0-3
+     write /dev/cpuset/background/cpus 0
+     write /dev/cpuset/system-background/cpus 0-1
 
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2

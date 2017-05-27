@@ -164,10 +164,13 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
-    audio.a2dp.default  
+    audio.a2dp.default    
+    
+PRODUCT_PACKAGES += \
+      libboringssl-compat    
+    
+# Without this filter, we get very close to the limit.
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space     
     
 #twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    
-
-# Without this filter, we get very close to the limit.
-PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space
