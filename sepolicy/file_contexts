@@ -33,10 +33,6 @@
 /dev/socket/adspdsock                   u:object_r:adspd_socket:s0
 /dev/socket/cutback                     u:object_r:cutback_socket:s0
 /data/system/dropbox-add(/.*)?          u:object_r:adspd_data_file:s0
-
-# Vibrator
-/sys/vibrator/pwmvalue                  u:object_r:vib_sysfs:s0
-
 #
 ## Executables
 #
@@ -46,3 +42,4 @@
 /system/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/sensorservice     			u:object_r:sensors_exec:s0
 /vendor/bin/qseecomd               		u:object_r:tee_exec:s0
+
