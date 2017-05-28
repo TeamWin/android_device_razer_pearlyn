@@ -165,11 +165,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
-    audio.a2dp.default    
-    
-PRODUCT_PACKAGES += \
-	  libstlport \
-      libboringssl-compat    
+    audio.a2dp.default       
     
 # Without this filter, we get very close to the limit.
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space     
