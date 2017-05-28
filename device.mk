@@ -167,6 +167,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default    
     
 PRODUCT_PACKAGES += \
+	  libstlport \
       libboringssl-compat    
     
 # Without this filter, we get very close to the limit.
