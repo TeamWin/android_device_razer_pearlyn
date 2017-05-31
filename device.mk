@@ -157,9 +157,7 @@ PRODUCT_PACKAGES += \
 
 # tcmiface for tcm support
 PRODUCT_PACKAGES += tcmiface
-
-PRODUCT_BOOT_JARS += \
-    tcmiface
+PRODUCT_BOOT_JARS += tcmiface
     
 # Audio
 PRODUCT_PACKAGES += \
@@ -167,8 +165,17 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.a2dp.default       
     
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.apq8084        
+    
 # Without this filter, we get very close to the limit.
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space     
+
+# Bootanimation
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
     
 #twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    
