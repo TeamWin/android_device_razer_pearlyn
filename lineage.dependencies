@@ -7,4 +7,20 @@
    "repository": "android_vendor_pearlyn",
    "target_path": "vendor/razer/pearlyn"
  }
+ {
+   "repository": "hardware_qcom_keymaster",
+   "target_path": "hardware/qcom/keymaster"
+ }
+ {
+   "repository": "android_package_TvSettings",
+   "target_path": "packages/apps/TvSettings"
+ }
+ {
+   "repository": "android_package_LockClock",
+   "target_path": "packages/apps/LockClock"
+ } 
+ {
+   "repository": "vendor_cmsdk_cm_pearlyn",
+   "target_path": "vendor/cmsdk"
+ }    
 ]
