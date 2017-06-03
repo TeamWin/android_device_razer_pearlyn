@@ -22,5 +22,9 @@
  {
    "repository": "vendor_cmsdk_cm_pearlyn",
    "target_path": "vendor/cmsdk"
- }    
+ }
+ {
+   "repository": "vendor_cm",
+   "target_path": "vendor/cm"
+ }      
 ]
