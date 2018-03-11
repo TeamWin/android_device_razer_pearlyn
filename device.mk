@@ -238,7 +238,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Treble packages
 $(call inherit-product, $(LOCAL_PATH)/treble.mk)
 
-#twrp
-#PRODUCT_COPY_FILES += \
-#	$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
-#	$(LOCAL_PATH)/twrp/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+twrp
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
+	$(LOCAL_PATH)/twrp/init.recovery.qcom.rc:root/init.recovery.qcom.rc
