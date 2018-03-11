@@ -119,11 +119,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	wpa_supplicant
 	
-# CMActions & LeanbackCustomize
-PRODUCT_PACKAGES += \
-	CMActions \
-	LeanbackCustomize
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
