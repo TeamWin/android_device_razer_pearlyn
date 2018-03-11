@@ -1,38 +1,14 @@
 [
  {
-   "repository": "android_kernel_pearlyn",
+   "repository": "android_kernel_razer_pearlyn",
    "target_path": "kernel/razer/pearlyn"
  },
  {
-   "repository": "android_vendor_pearlyn",
+   "repository": "proprietary_vendor_razer_pearlyn",
    "target_path": "vendor/razer/pearlyn"
  },
- {
-   "repository": "hardware_qcom_keymaster",
-   "target_path": "hardware/qcom/keymaster"
- },
- {
-   "repository": "android_package_TvSettings",
-   "target_path": "packages/apps/TvSettings"
- },
- {
-   "repository": "android_package_LockClock",
-   "target_path": "packages/apps/LockClock"
- }, 
- {
-   "repository": "vendor_cmsdk_cm_pearlyn",
-   "target_path": "vendor/cmsdk"
+  {
+   "repository": "android_device_qcom_common",
+   "target_path": "device/qcom/common"
  }
- {
-   "repository": "vendor_cm_pearlyn",
-   "target_path": "vendor/cm"
- },     
- {
-   "repository": "device_google_atv",
-   "target_path": "device/google/atv"
- }, 
- {
-   "repository": "android_build_pearlyn",
-   "target_path": "build"
- } 
 ]

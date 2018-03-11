@@ -1,11 +1,7 @@
-allow qti_init_shell btnvtool_exec:file rx_file_perms;
-set_prop(qti_init_shell, mmi_prop)
+allow qti_init_shell btnvtool_exec:file { execute execute_no_trans getattr open read };
 allow qti_init_shell cgroup:dir create;
-allow qti_init_shell persist_drm_file:dir search;
-allow qti_init_shell persist_drm_file:file { read getattr open };
-allow qti_init_shell sudaemon:unix_stream_socket connectto;
-allow qti_init_shell superuser_device:sock_file write;
+allow qti_init_shell sysfs_devices_system_cpu:file setattr;
+allow qti_init_shell radio_noril_prop:property_service set;
+allow qti_init_shell qualcomm_perf_cores_prop:property_service set;
 allow qti_init_shell sysfs_hsic:dir search;
-allow qti_init_shell sysfs_hsic:file { write open };
-
-
+allow qti_init_shell sysfs_hsic:file { open write };

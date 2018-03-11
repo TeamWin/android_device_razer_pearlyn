@@ -53,9 +53,9 @@ if [ -f /proc/usb ] && [ -f /proc/usb_device ]; then
         logi "override usb should be in host mode"
     else
         logi "usb should be in default mode"
-        if [ "$state" == "0" ]; then
+        if [ "$state" == "true" ]; then
             echo 0 > /proc/usb_device
-        elif [ "$state" == "1" ]; then
+        elif [ "$state" == "false" ]; then
             echo 1 > /proc/usb_device
         else
             echo 1 > /proc/usb_device

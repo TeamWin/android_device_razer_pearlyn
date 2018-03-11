@@ -1,6 +1,3 @@
-#
-# Copyright (C) 2016 The Sayanogen Project
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -21,12 +18,20 @@ $(call inherit-product, device/google/atv/products/atv_base.mk)
 # Get non-open-source specific aspects for pearlyn
 $(call inherit-product-if-exists, vendor/razer/pearlyn/pearlyn-vendor.mk)
 
+# Get non-open-source specific aspects for atv
+$(call inherit-product-if-exists, vendor/google/atv/atv-common.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay 
 
-PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_CONFIG := large xlarge
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard,tv
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+ 	ro.secure=0 \
+ 	ro.debuggable=1 \
+	ro.adb.secure=0
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
@@ -37,14 +42,6 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/etc,system/e
 
 # Keylayout files
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout,system/usr/keylayout) 
-
-# Let's put adb insecure on boot, for debug purposes	
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-	ro.secure=0 \
-	ro.debuggable=1 \
-	ro.hardware=qcom \
-	persist.sys.usb.config=mtp
 	
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -61,11 +58,11 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.razer.info.sh \
     init.razer.peripherals.sh \
-    init.razer.ping.sh \
     init.razer.rc \
     init.target.rc \
     init.razer.usb.rc \
     init.razer.usb.sh \
+    init.trace.rc \
     ueventd.qcom.rc
 
 # Media
@@ -78,20 +75,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/media/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
     $(LOCAL_PATH)/media/listen_platform_info.xml:system/etc/listen_platform_info.xml \
-    $(LOCAL_PATH)/media/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    $(LOCAL_PATH)/media/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    $(LOCAL_PATH)/media/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml\
     $(LOCAL_PATH)/media/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
     $(LOCAL_PATH)/media/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/media/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/media/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
     
-# Bootanimation    
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip \
     
 # Fonts fix
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/fonts/DroidSansFallback.ttf:system/fonts/DroidSansFallback.ttf \
-    frameworks/base/data/fonts/MTLmr3m.ttf:system/fonts/MTLmr3m.ttf 
+    frameworks/base/data/fonts/DroidSansFallback.ttf:system/fonts/DroidSansFallback.ttf
     
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -121,15 +115,14 @@ PRODUCT_PACKAGES += \
     vold.fstab \
     usf_post_boot.sh
 	
-# Busybox & ntfs-3g
+# wpa_supplicant
 PRODUCT_PACKAGES += \
-	busybox \
-	ntfs-3g
+	wpa_supplicant
 	
-# Launcher Mod Apps (thanks to CM13 for fugu)
+# CMActions & LeanbackCustomize
 PRODUCT_PACKAGES += \
-	ForgeHub \
-	AppDrawer	
+	CMActions \
+	LeanbackCustomize
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -142,40 +135,110 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml 
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
+    $(LOCAL_PATH)/etc/permissions/nrdp.modelgroup.xml:system/etc/permissions/nrdp.modelgroup.xml
 
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.product.board=apq8084 \
 	net.bt.name=Forge \
 	dalvik.vm.dex2oat-swap=false \
+	ro.product.first_api_level=22 \
 	ro.com.google.clientidbase=android-pearlyn
 	
 # Power HAL
 PRODUCT_PACKAGES += \
     power.apq8084
-
-# tcmiface for tcm support
-PRODUCT_PACKAGES += tcmiface
-PRODUCT_BOOT_JARS += tcmiface
     
 # Audio
 PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audiod \
+    audio_policy.apq8084 \
+    audio.primary.apq8084 \
     audio.r_submix.default \
+    libaudioroute \
     audio.usb.default \
-    audio.a2dp.default       
+    libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    tinymix    
+    
+# Display
+PRODUCT_PACKAGES += \
+	libqdutils \
+	libc2dcolorconvert \
+	libmm-omxcore \
+	libstagefrighthw \
+	liboverlay \
+	libqservice \
+	libvirtual \
+    gralloc.apq8084 \
+    hwcomposer.apq8084 \
+    hdmi_cec.apq8084 \
+    lights.apq8084 \
+    memtrack.apq8084    
     
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.apq8084        
     
+# DEPS: libs
+PRODUCT_PACKAGES += \
+    libcurl \
+	libion \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxCore \
+	libOmxEvrcEnc \
+	libOmxQcelp13Enc \
+	libOmxVdec \
+	libOmxVdpp \
+	libOmxVenc \
+	libQWiFiSoftApCfg \
+	librmnetctl \
+	libtinyxml2 \
+	libtinyxml \
+	libwifi-hal-qcom \
+	libcommon_time_client \
+	libjhead_jni \
+	libjhead \
+	libsqlite_jni \
+	libxml2
+	
+# DEPS: binaries
+PRODUCT_PACKAGES += \
+	cplay \
+	hostapd \
+	mm-vdec-omx-test \
+	mm-venc-omx-test720p \
+	mm-video-driver-test \
+	mm-video-encdrv-test \
+	msm-vidc-test \
+	rmnetcli \
+	setup_fs \
+	tinycap \
+	tinypcminfo \
+	tinyplay
+
 # Without this filter, we get very close to the limit.
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space     
 
 # Bootanimation
+TARGET_SCREEN_WIDTH := 1920
+TARGET_SCREEN_HEIGHT := 1080
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-    
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true 
+
+# Treble packages
+$(call inherit-product, $(LOCAL_PATH)/treble.mk)
+
 #twrp
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab    
+#PRODUCT_COPY_FILES += \
+#	$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
+#	$(LOCAL_PATH)/twrp/init.recovery.qcom.rc:root/init.recovery.qcom.rc
