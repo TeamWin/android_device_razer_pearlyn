@@ -1,0 +1,3 @@
+allow mediacodec kernel:system module_request;
+allow mediacodec debugfs_tracing:dir search;
+allow mediacodec debugfs_trace_marker:file { open write };

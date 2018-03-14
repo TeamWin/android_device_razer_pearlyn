@@ -1,0 +1,3 @@
+allow profman kernel:system module_request;
+allow profman debugfs_tracing:dir search;
+allow profman debugfs_trace_marker:file { open write };

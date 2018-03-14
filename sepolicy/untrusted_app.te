@@ -1,8 +1,5 @@
-allow untrusted_app device:dir { read open };
-allow untrusted_app zygote:dir search;
-allow untrusted_app zygote:file { read open };
-allow untrusted_app zygote:binder transfer;
+allow untrusted_app self:udp_socket ioctl;
+allow untrusted_app kernel:system module_request;
+allow untrusted_app debugfs_tracing:dir search;
+allow untrusted_app debugfs_trace_marker:file { open write };
 allow untrusted_app zygote:binder call;
-allow untrusted_app recovery_cache_file:dir { read getattr open };
-allow untrusted_app recovery_cache_file:file getattr;
-allow untrusted_app self:udp_socket { 0x8b0f };

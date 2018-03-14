@@ -33,12 +33,6 @@ LOCAL_MODULE            := init.qcom.audio.sh
 LOCAL_MODULE_TAGS       := optional eng
 LOCAL_MODULE_CLASS      := ETC
 LOCAL_SRC_FILES         := etc/init.qcom.audio.sh
-# Symlinking	
-LOCAL_POST_INSTALL_CMD := \
-	mkdir $(TARGET_OUT)/etc/firmware/wcd9320/; \
-	ln -sf /data/misc/audio/mbhc.bin $(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_mbhc.bin; \
-	ln -sf /data/misc/audio/wcd9320_anc.bin $(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_anc.bin; \
-	ln -sf /data/misc/audio/wcd9320_mad_audio.bin $(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_mad_audio.bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -95,11 +89,6 @@ LOCAL_MODULE       := init.qcom.wifi.sh
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/init.qcom.wifi.sh
-# Symlinking	
-LOCAL_POST_INSTALL_CMD := \
-    ln -sf /system/etc/wifi/WCNSS_qcom_cfg.ini $(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini; \
-	ln -sf /system/etc/wifi/WCNSS_qcom_wlan_nv.bin $(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin; \
-	ln -sf /persist/wlan_mac.bin $(TARGET_OUT)/etc/firmware/wlan/qca_cld/wlan_mac.bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

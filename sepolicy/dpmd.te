@@ -1,2 +1,0 @@
-allow dpmd zygote:fd use;
-allow dpmd zygote:tcp_socket { read write };

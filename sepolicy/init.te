@@ -1,25 +1,17 @@
-allow init atvc:file x_file_perms;
-allow init block_device:blk_file { create_file_perms setattr };
-allow init hob_block_device:blk_file { create_file_perms setattr };
-allow init shell_data_file:fifo_file getattr;
+allow init kmsg_device:chr_file write;
+allow init qti-testscripts:process { noatsecure rlimitinh siginh transition };
+allow init razerdate_exec:lnk_file read;
+allow init debugfs_trace_marker:file { open write };
+allow init diag_device:chr_file unlink;
 allow init sysfs_mpdecision:file getattr;
-# Sometimes there are leftovers from recovery, allow init to fix those
-allow init init:file relabelfrom;
-allow init fuse:dir { relabelfrom read };
-allow init fuse:file { relabelfrom getattr };
-# Additional permissions
-allow init qmuxd:unix_stream_socket connectto;
-allow init qmuxd_socket:sock_file write;
-allow init smem_log_device:chr_file { write ioctl };
-allow init thermal_device:chr_file { write ioctl };
-allow init self:socket { read write create ioctl };
-allow init socket_device:sock_file { create setattr };
-allow init self:udp_socket read;
+
+#debugfs access
+userdebug_or_eng(`
 allow init debugfs:dir mounton;
-allow init node:udp_socket node_bind;
-allow init port:udp_socket name_bind;
-allow init self:udp_socket { read bind setopt };
-allow sysinit ctl_default_prop:property_service set;
-allow sysinit shell_prop:property_service set;
-allow sysinit sysfs:file setattr;
-allow sysinit sysfs_lowmemorykiller:file { write getattr open setattr };
+allow init debugfs:dir r_dir_perms;
+allow init debugfs:file rw_file_perms;
+')
+
+domain_trans(init, rootfs, razer-periph-sh)
+domain_trans(init, rootfs, razer-info-sh)
+domain_trans(init, rootfs, qcom-usb-sh)

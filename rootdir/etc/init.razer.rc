@@ -1,22 +1,18 @@
 import init.pearlyn.diag.rc
 
-service razer-periph-sh /system/bin/sh /init.razer.peripherals.sh
+service razer-periph-sh /init.razer.peripherals.sh
    class late_start
    user root
    disabled
    oneshot
+   seclabel u:r:razer-periph-sh:s0
 
-service razer-info-sh /system/bin/sh /init.razer.info.sh
+service razer-info-sh /init.razer.info.sh
    class late_start
    user root
    disabled
    oneshot
-
-service razer-ping-sh /system/bin/sh /init.razer.ping.sh
-    class late_start
-    user root
-    disabled
-    oneshot
+   seclabel u:r:razer-info-sh:s0
 
 service razerdate /system/bin/date -s 20150101
    oneshot
@@ -35,7 +31,6 @@ on fs
 # on property:dev.bootcomplete=1
 on boot
     start razer-periph-sh
-    start razer-ping-sh
     start razer-info-sh
     start valiService
 

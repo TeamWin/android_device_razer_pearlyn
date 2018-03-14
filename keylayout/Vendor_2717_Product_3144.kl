@@ -1,0 +1,31 @@
+# XiaoMi Gamepad
+
+# Keys area
+key 304   BUTTON_A  # A
+key 305   BUTTON_B  # B
+key 307   BUTTON_X  # X
+key 308   BUTTON_Y  # Y
+
+key 310   BUTTON_L1  # L1
+key 311   BUTTON_R1  # R1
+key 312   BUTTON_L2  # L2
+key 313   BUTTON_R2  # R2
+
+key 314   BACK  # Back / select button
+key 172   HOME  # Home button
+key 315   MENU  # Start / menu button
+key 317   BUTTON_THUMBL  # Left mushroom press
+key 318   BUTTON_THUMBR  # Right mushroom press
+
+# Axis area
+axis 0x00 X flat 128  # Left mushroom - X Axis
+axis 0x01 Y flat 128  # Left mushroom - Y Axis
+
+axis 0x02 Z flat 128  # Right mushroom - X Axis
+axis 0x05 RZ flat 128  # Right mushroom - Y Axis
+
+axis 0x0A LTRIGGER flat 0  # Left trigger
+axis 0x06 RTRIGGER flat 0  # Right trigger
+
+axis 0x10 HAT_X flat 0  # D-PAD X Axis
+axis 0x11 HAT_Y flat 0  # D-PAD Y Axis

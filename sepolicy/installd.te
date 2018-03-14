@@ -1,1 +1,1 @@
-allow installd fuse:dir { setattr search};
+allow installd kernel:system module_request;
