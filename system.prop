@@ -82,3 +82,7 @@ persist.sys.wfd.virtual=0
 
 # Drm
 drm.service.enabled=true
+
+# Treble
+ro.treble.enabled=true
+persist.media.treble_omx=false

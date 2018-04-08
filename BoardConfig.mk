@@ -34,7 +34,7 @@ DEVICE_PATH := device/razer/pearlyn
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 vmalloc=400MB
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 vmalloc=400MB androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
@@ -50,6 +50,8 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USES_MKE2FS := true
+
 
 # HDMI
 TARGET_HAVE_HDMI_OUT := true
@@ -149,20 +151,7 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 TARGET_USES_64_BIT_BINDER := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 #TWRP
-RECOVERY_VARIANT := twrp
-TW_THEME := landscape_hdpi
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_NO_SCREEN_TIMEOUT := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-TW_NO_BATT_PERCENT := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TW_EXCLUDE_SUPERSU := true
-TW_INCLUDE_NTFS_3G := true
-TW_USE_TOOLBOX := true
-TW_EXCLUDE_TWRPAPP := true
+-include $(DEVICE_PATH)/twrp/twrp.mk

@@ -119,6 +119,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	wpa_supplicant
 	
+# CMActions & LeanbackCustomize
+PRODUCT_PACKAGES += \
+	CMActions \
+	LeanbackCustomize
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -151,7 +156,6 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audiod \
     audio_policy.apq8084 \
     audio.primary.apq8084 \
     audio.r_submix.default \
@@ -233,7 +237,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Treble packages
 $(call inherit-product, $(LOCAL_PATH)/treble.mk)
 
-twrp
+#TWRP
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
 	$(LOCAL_PATH)/twrp/init.recovery.qcom.rc:root/init.recovery.qcom.rc

@@ -176,6 +176,11 @@ on boot
     setprop service.adb.tcp.port 5555		
  	stop adbd		
  	start adbd
+ 	
+on fs
+
+    wait /dev/block/platform/${ro.boot.bootdevice}
+    symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice 	
 
 # msm specific files that need to be created on /data
 on post-fs-data
