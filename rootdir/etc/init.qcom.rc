@@ -63,10 +63,6 @@ on init
     chmod 0664 /sys/class/graphics/fb0/video_mode
     chown system graphics /sys/class/graphics/fb0/pa
     chmod 0664 /sys/class/graphics/fb0/pa
-    
-    # Setup zram options
-    write /sys/block/zram0/comp_algorithm lz4
-    write /sys/block/zram0/max_comp_streams 4
 
     write /proc/sys/vm/page-cluster 0
 
@@ -727,9 +723,6 @@ on property:persist.sys.rzr.device_mode=1
 	
 on property:ro.build.type=user
     rm /dev/diag
-
-on property:sys.boot_completed=1
-	swapon_all fstab.qcom
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
