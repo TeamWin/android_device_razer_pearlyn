@@ -210,7 +210,5 @@ TARGET_BOOTANIMATION_HALF_RES := true
 # Hidl packages
 $(call inherit-product, device/razer/pearlyn/hidl.mk)     
     
-# TWRP (optional)
-ifeq ($(WITH_TWRP),true)
+# TWRP
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
-endif
