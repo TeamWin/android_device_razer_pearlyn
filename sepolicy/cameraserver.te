@@ -1,3 +1,0 @@
-allow cameraserver kernel:system module_request;
-allow cameraserver debugfs_tracing:dir search;
-allow cameraserver debugfs_trace_marker:file { open write };

@@ -1,4 +1,0 @@
-on init
-    # disable Razer's "Device Mode"
-     write /proc/usb_device "1"
-     setprop persist.sys.rzr.device_mode "false"
